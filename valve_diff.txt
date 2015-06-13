@@ -1,0 +1,25 @@
+# The below diff is taken against the branch rep40_fixes_wdc of the replicatorG repo //github.com/makerbot/ReplicatorG.git 
+$ diff -r src/replicatorg/app/ui/controlpanel/ExtruderPanel.java ~/ReplicatorG/
+src/replicatorg/app/ui/controlpanel/ExtruderPanel.java
+383,395d382
+<               //if (tool.hasValve()) {
+<                       String valveString = "Valve";
+<                       String enableString = "open";
+<
+<                       JLabel valveLabel = makeLabel(valveString);
+<                       JCheckBox valveCheck = new JCheckBox(enableString);
+<                       valveCheck.setName("valve-check");
+<                       valveCheck.addItemListener(itemListener);
+<
+<                       add(valveLabel);
+<                       add(valveCheck,"wrap");
+<               //}
+<
+834,836d820
+<                       else if (name.equals("valve-check")) {
+<                               machine.runCommand(new replicatorg.drivers.commands.OpenValve());
+<                       }
+846,848d829
+<                       }
+<                       else if (name.equals("valve-check")) {
+<                               machine.runCommand(new replicatorg.drivers.commands.CloseValve());
